@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>201455033 이정현 Form 연습</title>
+</head>
+<body>
+    <form method="POST" action="go.php">
+        <table>
+            <tr>    <td>아이디</td> <td><input type="text" name="id" size="15"></td> 
+                    <td>비밀번호</td> <td><input type="password" name="password" size="15"></td>
+            </tr>
+
+            <tr>    <td>이름</td> <td><input type="text" name="username" size="15"></td> 
+                    <td>연락번호</td> <td><input type="text" name="tel" size="16"></td>
+            </tr>
+
+        </table>
+        
+        <table>
+            <tr>    <td>주소</td> <td><input type="text" name="address" size="45"></td> 
+            </tr>
+
+            <tr>    <td>이메일</td> <td><input type="text" name="mail" size="15">@
+                <select name="email" size="1">   
+                    <option value="-">-</option>
+                    <option value="gmail">gmail.com</option>
+                    <option value="naver">naver.com</option>
+                    <option value="daum">daum.net</option>
+                </select>
+            </td> 
+            </tr>
+        </table>
+        <hr>
+        선택사항 <br>
+        메일수신:
+        <input type="radio" name="agree" checked> 허용
+        &nbsp;
+        <input type="radio" name="agree"> 거부
+        <br><br>
+        <input type="submit"value="회원가입">
+        &nbsp;
+        <input type="reset"value="취소">
+        <br><br>
+        <fieldset>
+            <legend>필드셋의 제목</legend>
+            <label for="name">이름:</label> 
+            <input type="text" id="name"> <br>
+            
+            <label for="email">이메일:</label> 
+            <input type="text" id="email"> <br>
+            <input type="submit" value="보내기">
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>201455033 이정현 기차예매</title>
+</head>
+<body>
+    <h2>기차 예매하기</h2>
+    <form action="go.php" method="post">
+        <table>
+            <tr>
+                <td>예약자 아이디</td> <td><input type="text" name="id" size="15"></td>
+            </tr>
+            <tr>
+                <td>비밀번호</td> <td><input type="password" name="password" size="15"></td>
+            </tr>
+        </table>
+
+        <table>
+
+            <tr>
+                <td>시간</td><td>장소</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <select size=6>
+                        <option selected>08:00</option>
+                        <option >10:00</option>
+                        <option >12:00</option>
+                        <option >14:00</option>
+                        <option >16:00</option>
+                        <option >18:00</option>
+                    </select>
+                </td>
+
+                <td>
+                    <select size=6>
+                        <option selected>서울</option>
+                        <option >인천</option>
+                        <option >대전</option>
+                        <option >대구</option>
+                        <option >부산</option>
+                        <option >춘천</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="submit"value="예매"></td>
+                
+                <td><input type="reset"value="취소"></td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>201455033_이정현_자기소개홈페이지</title>
+    <style type="text/css">
+        body {
+            background-color: #333;
+        }
+
+        div.fullwidth {
+            /*각각 다른 해상도의 모니터환경에서 다르게 보일 것을 대비해 만든 div클래스*/
+            /*body태그 하위를 감싸는 구조로 적용하였습니다.*/
+            width: 100%;
+            height: 100%;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            /*스크롤애니메이션 적용 단 해당 애니메이션은 IE에서는 적용이 안된다.*/
+            font-family: "Malgun Gothic";
+        }
+
+        ul {
+            position: fixed;
+            /*상단메뉴 고정*/
+            top: 0;
+            /*상단메뉴와 브라우저 상단까지의 여백 0*/
+            list-style-type: none;
+            /*ul 표식 제거*/
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            z-index: 10;
+            /*다른 태그에 가려지지 않게 z-index 10 적용*/
+        }
+
+        li {
+            float: left;
+            /*가로 메뉴바 형태를 위해 left값 적용*/
+        }
+
+        li a {
+            display: block;
+            /*a링크의 영역을 블록단위로 늘림 (메뉴버튼을 누르기 편하게)*/
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .home {
+            background-color: #4CAF50;
+        }
+
+        li a:hover:not(.home) {
+            /*home 클래스 제외. li의 자손 a태그에 마우스를 올리면 글자색 변경 효과 적용*/
+            color: #64e86a;
+        }
+
+        h1 {
+            font-size: 80px;
+            color: white;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 35px;
+            color: white;
+            text-align: center;
+            width: 700px;
+            /*약력부분에 들어갈 태그. width를 지정하지 않으면 너비가 페이지를 넘어가버린다. 따라서 너비를 최소한으로 설정*/
+        }
+
+        .vl {
+            /*약력을 꾸며줄 수직선 생성을 위한 클래스*/
+            border-left: 6px solid #4CAF50;
+            height: 1600px;
+            position: absolute;
+            left: 50%;
+            margin-left: -3px;
+            top: 3000;
+        }
+
+        table {
+            border: 5px solid #4CAF50;
+            border-collapse: collapse;
+            color: white;
+        }
+
+        th, td {
+            border: 5px solid #4CAF50;
+            color: white;
+            text-align: center;
+        }
+
+        /*시간표에 각 과목별 색상을 적용하기위해 만든 클래스*/
+
+        .j_literature {
+            background-color: #FA5858;
+        }
+
+        .public_art {
+            background-color: #7658fa;
+        }
+
+        .internet_programming {
+            background-color: #ff9900;
+        }
+
+        .it_project2 {
+            background-color: #fa58e4;
+        }
+
+        .lunch {
+            background-color: #dfcd32;
+        }
+    </style>
+    <script language="javascript">
+        var temp = "";  //temp 내용 초기화. 쓰레기값 방지
+
+        function input() {  //함수 생성
+            var input = document.getElementById("input").value.trim();  //방문자 입력 문자열의 양쪽 공백 제거
+
+            if (input != "") {   //공백을 허용하지 않기 위해 if문 사용
+                var time = new Date();      //현재 시각 데이터 객체 지정
+
+                time = time.getFullYear() + "." + (time.getMonth() + 1) + "." + time.getDate()+ "." + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+                //필요한 날짜,시간정보로 가공
+                input += "        - " + time + "\n";     //방명록에 날짜,시간정보를 더하고 줄바꿈
+
+                temp += input;                                      //날짜정보가 더해진 방명록 내용을 temp에 저장
+                document.getElementById("output").value = temp;     //방명록 등록
+                document.getElementById("input").value = "";        //방명록 입력칸 초기화
+            }
+            else {   //공백 입력시 경고창
+                alert("글을 작성해주세요.");    //경고창 띄우는 함수사용
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="fullwidth">
+        <ul>
+            <li><img src="Elin.ico" alt="Elinicon" width="50px" height="50px"></li>
+            <li><a class="home" href="#home">Home</a></li>
+            <li><a href="#resume">이력서</a></li>
+            <li><a href="#schedule">이번학기 시간표</a></li>
+            <li><a href="#life">인생계획표</a></li>
+            <li><a href="#project">최근 프로젝트</a></li>
+            <li><a href="#guest">방명록</a></li>
+            <!--href에 #을 사용하면 해당 속성값의 id를 가진 요소로 자동이동이 된다.
+        상단에 적은 html에 scroll-behavior: smooth; 라는 속성과 속성값으로 스크롤되는 애니메이션이 적용된다.-->
+        </ul>
+
+        <a id="home"></a>
+        <br>
+
+        <div style="text-align: center; margin-top: 10%; margin-bottom: 10%;">
+            <img src="이정현.jpg" alt="증명사진" width="300px" height="400px">
+            <h1> 저는 </h1>
+            <h1> 프로그래머 입니다. </h1>
+        </div>
+
+        <a id="resume"></a>
+        <br>
+
+        <div style="margin-top: 5%; margin-bottom: 10%; width: 100%;">
+            <h1> 약력 </h1>
+            <div class="vl"></div>
+            <center>
+                <h2 style="position: relative; left: 250px;">2014 용인백현고등학교 졸업</h2>
+                <br> <br> <br> <br>
+                <h2 style="position: relative; left: -200px;">2014 한신대학교 입학</h2>
+                <br> <br> <br> <br>
+                <h2 style="position: relative; left: 315px; ">2014 - 2015 밴드동아리 MUSE 회장</h2>
+                <br> <br> <br> <br>
+                <h2 style="position: relative; left: -260px;">2016 - 2018 공군 정보통신병</h2>
+                <br> <br> <br> <br>
+                <h2 style="position: relative; left: 200px; ">2019 성적우수 장학생</h2>
+                <br> <br> <br> <br>
+                <h2 style="position: relative; left: -200px;">2020 성적우수 장학생</h2>
+                <br> <br> <br> <br>
+                <h2 style="position: relative; left: 220px; ">2020 정보처리기사 획득</h2>
+                <br> <br> <br> <br>
+                <h2 style="position: relative; left: -235px;">2021 한신대학교 졸업예정</h2>
+                <br> <br> <br> <br>
+                <h2 style="position: relative; left: 345px; ">2021 삼성 청년 S/W 아카데미 수료 예정</h2>
+            </center>
+        </div>
+
+        <a id="schedule"></a>
+        <br>
+
+        <div style="margin-top: 10%; margin-bottom: 10%;">
+            <h1> 시간표 </h1>
+            <center>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>월</th>
+                            <th>화</th>
+                            <th>수</th>
+                            <th>목</th>
+                            <th>금</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th>1교시</th>
+                            <td rowspan="2" class="j_literature">일본문학길잡이</td>
+                            <td> </td>
+                            <td> </td>
+                            <td rowspan="2" class="public_art">공공미술과 도시재생</td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <th>2교시</th>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <th>3교시</th>
+                            <td></td>
+                            <td rowspan="2" class="public_art">공공미술과 도시재생</td>
+                            <td rowspan="2" class="j_literature">일본문학길잡이</td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <th>4교시</th>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <th>5교시</th>
+                            <td rowspan="2" colspan="5" class="lunch">점심시간</td>
+                        </tr>
+                        <tr>
+                            <th>6교시</th>
+                        </tr>
+                        <tr>
+                            <th>7교시</th>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <th>8교시</th>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <th>9교시</th>
+                            <td rowspan="2" class="internet_programming">인터넷 프로그래밍</td>
+                            <td> </td>
+                            <td rowspan="2" class="internet_programming">인터넷 프로그래밍</td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <th>10교시</th>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <th>11교시</th>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td rowspan="4" class="it_project2">정보통신 프로젝트2 </td>
+                        </tr>
+                        <tr>
+                            <th>12교시</th>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <th>13교시</th>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        <tr>
+                            <th>14교시</th>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </center>
+        </div>
+
+        <a id="life"></a>
+        <br>
+
+        <div style="text-align: center; margin-top: 5%;">
+            <h1>나의 인생계획표</h1>
+            <img src="인생계획표.jpg" alt="인생계획표">
+        </div>
+
+        <a id="project"></a>
+        <br>
+
+        <div>
+            <h1>최근 프로젝트</h1>
+            <br>
+            <center>
+                <div style=" width: 100%; margin-bottom: 5%;">
+                    <div style="width: 49.5%; height:600px; float:left; margin-right: 1%;">
+                        <h2>게임 방화벽 프로그램</h2>
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TONpYmdv-AQ"
+                            frameborder="0"></iframe>
+                    </div>
+
+                    <div
+                        style="text-align: left; width: 49.5%; height:600px; font-size: 30px; color:white; display: inline-block;">
+                        <br><br>
+                        <h4>게임유튜버의 의뢰로 제작하게 된 게임 관련 프로그램입니다.</h4>
+                        <h4>윈도우 파워쉘 코딩으로 제작하였으며, </h4>
+                        <h4>윈도우 운영체제의 방화벽 정책설정을 바꾸어</h4>
+                        <h4>유저가 온라인 상태를 유지하면서</h4>
+                        <h4>솔로플레이가 가능하게 해주는 프로그램입니다.</h4>
+                    </div>
+                </div>
+
+                <div style="width: 100%; margin-top: 5%;">
+                    <div
+                        style="width: 49.5%; height:600px; text-align: right; font-size: 30px; color:white; float: left;">
+                        <br><br>
+                        <h4>IoT를 주제로 제작한 졸업작품입니다.</h4>
+                        <h4>아두이노기반으로 동작하며 </h4>
+                        <h4>사용자는 Android 디바이스를 통해</h4>
+                        <h4>집안을 제어할 수 있습니다.</h4>
+                        <h4>포트포워딩 정책을 적용하여</h4>
+                        <h4>사용자는 집밖에 있어도 조작이 가능합니다.</h4>
+                    </div>
+
+                    <div style="width: 49.5%; height:600px; text-align: center; display: inline-block;margin-left: 1%;">
+                        <h2>스마트 홈 IoT 구현</h2>
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/DXVFEKRHE4E"
+                            frameborder="0"></iframe>
+                    </div>
+                </div>
+            </center>
+        </div>
+
+
+        <div style="height: 1000px; text-align: center; margin-top: 200px;">
+            <a id="guest"></a>
+            <br>
+
+            <h1>방명록</h1>
+            <textarea id="output" style="width: 30%; height: 470px;" placeholder="밑의 입력창으로 방명록을 남겨주세요."></textarea>
+            <br><br>
+            <input type="text" id="input" placeholder="방문글을 남겨주세요.">
+            <button onclick="input()">방명록 남기기</button>
+            <!--button의 onclick 속성으로 사용자가 클릭할 시 사용될 함수를 정의한다.-->
+        </div>
+    </div>
+</body>
+
+</html>

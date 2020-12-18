@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>201455033 이정현 실습 [1118]</title>
+    <script language="javascript">
+
+        function Users(id, name, password, age){
+            this.id = id;
+            this.name = name;
+            this.password = password;
+            this.age = age;
+        }
+
+        function printInfo(user){
+            document.write("id: "+user.id+"<br>");
+            document.write("name: "+user.name+"<br>");
+            document.write("password: "+user.password+"<br>");
+            document.write("age: "+user.age+"<br>");
+            document.write("<br>");
+        }
+    </script>
+</head>
+<body>
+    <hr>
+    <script language="javascript">
+        document.write("객체 생성하기");
+        document.write("<br>");
+
+        id = prompt("아이디를 입력하세요.");
+        name = prompt("이름을 입력하세요.");
+        password = prompt("비밀번호를 입력하세요.");
+        age = prompt("나이를 입력하세요.");
+
+        user1 = new Users(id,name,password,age);
+
+        id = prompt("아이디를 입력하세요.");
+        name = prompt("이름을 입력하세요.");
+        password = prompt("비밀번호를 입력하세요.");
+        age = prompt("나이를 입력하세요.");
+
+        user2 = new Users(id,name,password,age);
+
+        id = prompt("아이디를 입력하세요.");
+        name = prompt("이름을 입력하세요.");
+        password = prompt("비밀번호를 입력하세요.");
+        age = prompt("나이를 입력하세요.");
+
+        user3 = new Users(id,name,password,age);
+
+        printInfo(user1);
+        printInfo(user2);
+        printInfo(user3);
+    </script>
+</body>
+</html>
